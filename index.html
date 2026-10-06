@@ -2166,6 +2166,65 @@ That’s the mindset behind my DevOps journey.
                     ↗
                 </a>
 
+                <div class="project-number">
+                    02
+                </div>
+
+                <div class="project-info">
+
+                    <h3>
+                        TaskForge: GitOps-Driven Job Processing Platform on Kubernetes
+                    </h3>
+                    <p>
+                       TaskForge is a distributed job-processing platform built to demonstrate a complete, automated delivery pipeline from code commit to a running Kubernetes cluster. The application is intentionally simple; the focus is the DevOps and GitOps workflow around it.
+
+                      HOW IT WORKS
+                      A user submits a job from a live dashboard. A FastAPI service queues it in Redis, and background Python workers process it. The dashboard shows queue length, job status and results in real time.
+
+                       CI/CD PIPELINE (GitHub Actions)
+                        - Ruff linting, pytest unit tests and Helm chart validation
+                        - Secret scanning with Gitleaks
+                        - Matrix build of Docker images for 3 microservices
+                        - Vulnerability scanning with Trivy
+                        - Image publishing to GitHub Container Registry
+
+                       GITOPS DEPLOYMENT
+                        - Kubernetes manifests packaged as a Helm chart
+                        - Argo CD continuously syncs the cluster with the Git repository (automated sync, self-healing, pruning), so deployments happen through git push instead of manual kubectl commands
+
+                        ARCHITECTURE
+                        - Three independent services (nginx frontend, FastAPI API, Python workers) in non-root containers
+                        - Liveness/readiness probes and resource limits
+                        - NGINX Ingress for external access
+                        - Prometheus-format metrics exposed by the API and workers
+
+.
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>Python</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>GitHub Actions</span>
+                        <span>GitOps</span>
+                        <span>Agro CD</span>
+                       <span>Helm Chart</span>
+                       
+                        
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="https://github.com/shraddhamankar016-cell/taskforge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-arrow">
+                    ↗
+                </a>
+
             </article>
 
         </div>
